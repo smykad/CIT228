@@ -11,8 +11,6 @@ def print_list(myString, myList):
         else:
            print(f"{myList[i]}")
 
-
-
 # Lists
 
 myGames = ['Rust', 'Raft', 'Runescape']
