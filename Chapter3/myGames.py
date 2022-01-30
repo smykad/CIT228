@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Methods
 
 # method to print a list with string formatting
