@@ -73,7 +73,6 @@ print_header('Exercise', '3-6')
 modify_invite_list('John Cleese', 'Mark Hamil', 'Jeff Bridges', myGuestList, myInvite)
 
 print_header('Exercise', '3-7')
-=======
 
 # prints a header
 def print_header(myString, myNum):
@@ -150,5 +149,5 @@ print_header('Exercise', '3-6')
 modify_invite_list('John Cleese', 'Mark Hamil', 'Jeff Bridges', myGuestList, myInvite)
 
 print_header('Exercise', '3-7')
->>>>>>> db76f90efeb9bf5ab2e94cd69586922049d6acb8
+
 shrink_list(myGuestList, myUninvite, myInvite, 4)

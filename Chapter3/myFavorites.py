@@ -95,7 +95,7 @@ myFavoriteCombo = ['steak', 'brussel sprouts', 42, 13, 'Life of Brian', 'Monty P
 # print(myNumbers[::2])
 
 main()
-=======
+
 # Chapter 3 hands on assignment no. 1
 # Lists
 
@@ -193,4 +193,3 @@ myFavoriteCombo = ['steak', 'brussel sprouts', 42, 13, 'Life of Brian', 'Monty P
 # print(myNumbers[::2])
 
 main()
->>>>>>> db76f90efeb9bf5ab2e94cd69586922049d6acb8

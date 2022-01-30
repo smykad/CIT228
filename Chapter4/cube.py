@@ -1,3 +1,5 @@
+# kinda did it different than assignment but this should be fine
+
 # prints a header
 def print_header(myString, myNum):
     print(f"-----------------------------------------{myString} {myNum}-----------------------------------------")
