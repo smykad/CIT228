@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # prints a header
 def print_header(myString, myNum):
     print(f"-----------------------------------------{myString} {myNum}-----------------------------------------")

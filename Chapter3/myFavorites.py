@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Chapter 3 hands on assignment no. 1
 # Lists
 
