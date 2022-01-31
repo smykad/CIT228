@@ -30,7 +30,6 @@ myGames.reverse()
 print_list("List sorted in reverse", myGames)
 myGames.sort()
 print_list("List sorted in alphabetical order", myGames)
-=======
 # Methods
 
 # method to print a list with string formatting
@@ -65,5 +64,4 @@ myGames.reverse()
 print_list("List sorted in reverse", myGames)
 myGames.sort()
 print_list("List sorted in alphabetical order", myGames)
->>>>>>> db76f90efeb9bf5ab2e94cd69586922049d6acb8
 print(f'There are {len(myGames)} games in my list')
