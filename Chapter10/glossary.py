@@ -22,6 +22,7 @@ def create(object):
     print("You are about to create a new file, existing data will be overwritten!\n (q to quit, any key to continue)\nEnter choice here: ", end='')
     overwrite = input()
     myString = 'Please make a selection from the menu'
+    
     match overwrite.lower():
         case 'q':
             menu(myString)
