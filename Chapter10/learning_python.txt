@@ -1,0 +1,4 @@
+In Python I have learned indentation is important
+In Python I have learned how to iterate through lists
+In Python I have learned to concantenate strings
+In Python I have learned to read text files
