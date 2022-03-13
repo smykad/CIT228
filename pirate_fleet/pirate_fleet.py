@@ -86,7 +86,7 @@ class PirateFleet:
         self.cannon_balls.update()
         screen_rect = self.screen.get_rect()
         for cannon_ball in self.cannon_balls.copy():
-            if cannon_ball.rect.right >= screen_rect.right:
+            if cannon_ball.rect.left < screen_rect.left:
                 self.cannon_balls.remove(cannon_ball)
         
     def ship_fx(self, direction):
@@ -103,10 +103,10 @@ class PirateFleet:
         
         pirate_height = pirate.rect.height
         pirate_width = pirate.rect.width
-        available_space_x = self.settings.screen_width - (20 * pirate_width)
+        available_space_x = self.settings.screen_width - (8 * pirate_width)
         number_pirates_x = available_space_x // (2 *pirate_width)
 
-        available_space_y = self.settings.screen_height - (2 * pirate_height)
+        available_space_y = self.settings.screen_height - (pirate_height)
         number_rows = available_space_y // (2 *pirate_height)
 
         for row_number in range(number_rows):
