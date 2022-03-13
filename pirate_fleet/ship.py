@@ -14,7 +14,7 @@ class Ship(Sprite):
         self.image = pygame.image.load('pirate_fleet/images/ship.png')
         self.rect = self.image.get_rect()
         
-        self.rect.midleft = self.screen_rect.midleft
+        self.rect.midright = self.screen_rect.midright
         
         self.y = float(self.rect.y)
         
@@ -35,7 +35,7 @@ class Ship(Sprite):
         self.screen.blit(self.image, self.rect)
         
     def center_ship(self):
-        self.rect.midleft = self.screen_rect.midleft
+        self.rect.midright = self.screen_rect.midright
         self.y = float(self.rect.y)
     
         

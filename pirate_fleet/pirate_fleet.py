@@ -6,6 +6,7 @@ import pygame
 from settings import Settings
 from ship import Ship
 from cannon_ball import CannonBall
+from pirate import Pirate
 
 class PirateFleet:
     
@@ -21,6 +22,9 @@ class PirateFleet:
         
         self.ship = Ship(self)
         self.cannon_balls = pygame.sprite.Group()
+        self.pirates = pygame.sprite.Group()
+        
+        self._create_fleet()
         
         
     def _update_screen(self):
@@ -28,6 +32,8 @@ class PirateFleet:
         self.ship.blitme()
         for cannon_ball in self.cannon_balls.sprites():
             cannon_ball.draw_ball()
+        
+        self.pirates.draw(self.screen)      
             
         pygame.display.flip()
     
@@ -66,14 +72,22 @@ class PirateFleet:
         while True:
             self._check_events()
             self.ship.update()
-            self.cannon_balls.update()
+            self._update_cannon()
             self._update_screen()
             
     def _fire_cannon(self):
         mySFX = pygame.mixer.Sound('pirate_fleet/media/shot.wav')
-        new_cannon_ball = CannonBall(self)
-        self.cannon_balls.add(new_cannon_ball)
-        pygame.mixer.Sound.play(mySFX)
+        if len(self.cannon_balls) < self.settings.cannon_balls_allowed:
+            new_cannon_ball = CannonBall(self)
+            self.cannon_balls.add(new_cannon_ball)
+            pygame.mixer.Sound.play(mySFX)
+    
+    def _update_cannon(self):
+        self.cannon_balls.update()
+        screen_rect = self.screen.get_rect()
+        for cannon_ball in self.cannon_balls.copy():
+            if cannon_ball.rect.right >= screen_rect.right:
+                self.cannon_balls.remove(cannon_ball)
         
     def ship_fx(self, direction):
         mySFX = pygame.mixer.Sound('pirate_fleet/media/splash.wav')
@@ -83,15 +97,32 @@ class PirateFleet:
             case 'down':
                 self.ship.moving_down = True
         pygame.mixer.Sound.play(mySFX)
+
+    def _create_fleet(self):
+        pirate = Pirate(self)
         
-        
-    
-        
-        
-    
-   
-   
-            
+        pirate_height = pirate.rect.height
+        pirate_width = pirate.rect.width
+        available_space_x = self.settings.screen_width - (20 * pirate_width)
+        number_pirates_x = available_space_x // (2 *pirate_width)
+
+        available_space_y = self.settings.screen_height - (2 * pirate_height)
+        number_rows = available_space_y // (2 *pirate_height)
+
+        for row_number in range(number_rows):
+            for pirate_number in range(number_pirates_x):
+                # Create an alien and place it in the row. 
+                self._create_pirate(pirate_number, row_number)
+                
+    def _create_pirate(self, pirate_number, row_number):
+        """Create an alien and place it in the row"""
+        pirate = Pirate(self)
+        pirate_width, pirate_height = pirate.rect.size
+        pirate.x = pirate_width + 2 * pirate_width * pirate_number
+        pirate.rect.x = pirate.x
+        pirate.rect.y = pirate.rect.height + 2 * pirate.rect.height * row_number
+        self.pirates.add(pirate)
+                
         
 
 if __name__=='__main__':
