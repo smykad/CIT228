@@ -10,7 +10,7 @@ class CannonBall(Sprite):
         self.color = self.settings.cannon_ball_color
         
         self.rect = pygame.Rect(0, 0, self.settings.cannon_ball_width, self.settings.cannon_ball_height)
-        self.rect.midtop = ai_game.ship.rect.midtop
+        self.rect.midright = ai_game.ship.rect.midright
         
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)
@@ -24,3 +24,8 @@ class CannonBall(Sprite):
     def draw_ball(self):
         
         pygame.draw.rect(self.screen, self.color, self.rect)
+        
+
+        
+
+        
