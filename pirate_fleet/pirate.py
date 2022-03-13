@@ -9,7 +9,7 @@ class Pirate(Sprite):
         self.screen = ai_game.screen
         self.settings = ai_game.settings
         
-        self.image = pygame.image.load('pirate_fleet/images/pirate.png')
+        self.image = pygame.image.load('pirate_fleet/images/myPirate2.png')
         self.rect = self.image.get_rect()
         
         self.rect.x = self.rect.width
