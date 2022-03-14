@@ -10,10 +10,17 @@ class Settings:
         self.cannon_ball_height = 10
         self.cannon_ball_color = (42, 44, 46)
         
-        self.cannon_ball_speed = 3.0
+        self.cannon_ball_speed = 2.5
         self.cannon_balls_allowed = 5
         
-        self.pirate_speed = 1.0
+        self.ship_limit = 3         
+    
+        self.num_pirates = 9
+        
+        self.fleet_drop_speed = 10
         self.fleet_direction = 1
-
+        
+        self.pirate_speed = 1.5
+        
+        self.pirate_points = 50
         

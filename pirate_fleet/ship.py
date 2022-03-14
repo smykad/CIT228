@@ -17,9 +17,12 @@ class Ship(Sprite):
         self.rect.midright = self.screen_rect.midright
         
         self.y = float(self.rect.y)
+        self.x = float(self.rect.x)
         
         self.moving_up = False
         self.moving_down = False
+        self.moving_left = False
+        self.moving_right = False
         
     def update(self):
         
@@ -27,6 +30,11 @@ class Ship(Sprite):
             self.y -= 1
         if self.moving_down and self.rect.bottom < self.screen_rect.bottom: 
             self.y += 1
+        if self.moving_right and self.rect.right < self.screen_rect.right:
+            self.x += 1
+        if self.moving_left and self.rect.left > 0:
+            self.x -= 1
+        self.rect.x = self.x
         
         self.rect.y = self.y
         
@@ -37,5 +45,6 @@ class Ship(Sprite):
     def center_ship(self):
         self.rect.midright = self.screen_rect.midright
         self.y = float(self.rect.y)
+        self.x = float(self.rect.x)
     
         
