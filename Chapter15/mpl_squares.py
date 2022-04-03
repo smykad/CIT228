@@ -1,8 +1,3 @@
-# Hands on 1, 2
-# Doug Smyka
-# CIT 228
-# 4/3/2022
-
 import matplotlib.pyplot as plt
 
 # Method for stylizing and drawing a figure
