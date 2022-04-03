@@ -8,13 +8,14 @@ tempsJuly = [100,105,84,105,90,99,90,95,94,100,79,112,99,100,101,100,99,97,96,98
 tempsJan = [10,8,15,11,23,33,23,44,30,32,34,35,34,35,22,32,34,35,34,35,32,34,35,34,35,32,34,35,34,35,]
 tempsFeb=[19,21,18,22,23,25,29,30,33,35,55,56,60,55,58,55,56,52,51,50,50,49,48,48,45,44,42,41,40,41]
 
-plt.scatter(days, tempsJune, color='yellow',label="June Temps")
-plt.scatter(days, tempsJuly, color='orange', label="July Temps")
-plt.scatter(days, tempsJan, color='purple', label="January Temps")
-plt.scatter(days, tempsFeb, color='blue', label="February Temps")
+plt.scatter(days, tempsJune, cmap=plt.cm.summer,label="June Temps")
+plt.scatter(days, tempsJuly, cmap=plt.cm.inferno, label="July Temps")
+plt.scatter(days, tempsJan, cmap=plt.cm.winter, label="January Temps")
+plt.scatter(days, tempsFeb, cmap=plt.cm.cool, label="February Temps")
 plt.ylabel('Temps')
 plt.xlabel('#Days')
-plt.title('Temperature Comparison')
-plt.legend(loc='lower right', ncol=2, fontsize=8)
+plt.suptitle('Temperature Comparison')
+plt.title('Jan-Feb vs June-July')
+# plt.legend(loc='lower right', ncol=2, fontsize=8)
 plt.grid()
 plt.show()
