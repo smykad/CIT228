@@ -24,4 +24,6 @@ plt.ylabel("Percentages")
 plt.xlabel("2013-2016") 
 plt.title("Fast Food Consumption Per Day", c="lightblue", fontsize=18) 
 plt.legend(loc="best")
-plt.show() 
+plt.show()
+
+#EOF
