@@ -1,67 +1,73 @@
-# Hands on 1, 2, 3 and 4
+# Hands on 1, 2
 # Doug Smyka
 # CIT 228
 # 4/3/2022
 
 import matplotlib.pyplot as plt
 
-# To see styles plt.style.available
-"""
-input_values = [1,2,3,4,5]
-squares = [1,4,9,16,25]
-
-# set style
-plt.style.use('fivethirtyeight')
-
-fig, ax = plt.subplots()
-# Line Width
-ax.plot(input_values, squares, linewidth=3)
-# Set chart title and label axes
-ax.set_title('Square Numbers', fontsize=24)
-ax.set_xlabel('Value', fontsize=14)
-ax.set_ylabel('Square of Value', fontsize=14)
-
-#set size of tick labels
-ax.tick_params(axis='both', labelsize=14)
-
-plt.show()
-"""
-
-# method for stylizing data
+# Method for stylizing and drawing a figure
 def myStyle(title, x, y, myTitleFontSize, 
             myFontSizeX, myFontSizeY, myStyle, 
             myAxis, myWhich, myLabel, myColor,
             myScatterXValues, myScatterYValues, 
             myScatterSValue, myRange):
+    # Sets the style of the figure
+    # you can use print(plt.style.available) to see the different styles
     plt.style.use(myStyle)
+    # fig represents the entire figure or collection of plots that are generated
+    # the variable ax represents a single plot in the figure
     fig, ax = plt.subplots()
+    # X values, Y values, Color, Size of plot point
     ax.scatter(myScatterXValues, myScatterYValues, cmap=myColor, s=myScatterSValue)
+    # Set Chart title and label the axis
     ax.set_title(title, fontsize=myTitleFontSize)
     ax.set_xlabel(x, fontsize=myFontSizeX)
     ax.set_ylabel(y, fontsize=myFontSizeY)
+    # Set size of tick labels
     ax.tick_params(axis=myAxis, which=myWhich, labelsize=myLabel)
     ax.axis(myRange)
+    # use this if you want to save a png of the data plot
+    # plt.savefig('square_plot.png', bbox_inches='tight')
+    # shows the figure
     plt.show()
     
-    # Method for stylized data that takes x,y, size and range values
+    # Method figure that takes x, y coordinates, plot point size and range
 def myScatter(x,y,s,r):
+    
+    # Passes the variables to the styling method that also creates the figure
     myStyle('Cube Numbers', 'Value', 
             'Cube of Value', 24, 14, 14, 
-            'seaborn', 'both', 'major', 14, plt.cm.Blues, x,y,s,r)
+            'seaborn', 'both', 'major', 
+            14, plt.cm.Blues, x,y,s,r)
     
     
-# Try it yourself 15-1
-x_val = [1,2,3,4,5]
-y_val = [x**3 for x in x_val]
-r_val = [0, 5.5, 0, 130]
+# Try it yourself 15-1 
 
-myScatter(x_val, y_val, 100, r_val)
+# Numbers 1 through 5
+x_val = [1,2,3,4,5]
+# iterate through numbers 1 through 5 and cube it
+y_val = [x**3 for x in x_val]
+# set range for the table, 
+# chose slightly above the values so they plot on figure nicely
+r_val = [0, 5.1, 0, 5.1**3]
+
+"""
+    *************************
+    *     Hands on 15-1     *
+    *************************
+"""
+myScatter(x_val, y_val, 10, r_val)
 
 # Try it yourself 15-2
 x_values = range(1, 5001)
 y_values = [x**3 for x in x_values]
 r_values = [0, 5100, 0, 5100**3]
 
+"""
+    *************************
+    *     Hands on 15-2     *
+    *************************
+"""
 myScatter(x_values, y_values, 100, r_values)
 
 
