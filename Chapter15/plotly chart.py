@@ -1,27 +1,5 @@
 import plotly.graph_objects as go
-import numpy as np
-
-labels = 'PNG', 'JPEG', 'SVG', 'GIF', 'Other'
-numUsed = [376, 348, 153, 104, 19]
-colors=['lightgreen','orange','lightblue','lavender','pink']
-fig = go.Figure(data=[go.Pie(labels=labels, values=numUsed)])
-fig.update_traces(
-    hoverinfo='label+percent',
-    textinfo='value',
-    textfont_size=20, 
-    marker=dict(colors=colors,line=dict(color='black',width=2))
-    )
-fig.update_layout(
-    title_text="Popular Graphic Formats on the web",
-    title_font_color="darkgreen", 
-    title_font_size=30, 
-    title_font_family="Raleway", 
-    title_xref="paper", 
-    title_yref="paper",
-    margin_l=200,
-    margin_r=200
-    )
-fig.show()
+from plotly import offline
 
 age_range = ["Over 20","20-39","40-59","Over 60"]
 men = [37.9,46.5,37.6,25.6]
@@ -48,7 +26,7 @@ fig.add_trace(go.Bar(
     marker_color='rgb(7, 87, 247)'
 ))
 
-fig.update_layout(
+layout = fig.update_layout(
     title='Fast Food Consumption Per Day',
     title_font_color='darkblue',
     title_font_size=30,
@@ -68,4 +46,6 @@ fig.update_layout(
     bargap=0.15, # gap between bars of adjacent location coordinates.
     bargroupgap=0.1 # gap between bars of the same location coordinate.
 )
+
 fig.show()
+offline.plot({'data': fig, 'layout':layout}, filename='plotly.html')
