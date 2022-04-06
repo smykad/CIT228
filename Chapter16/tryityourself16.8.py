@@ -8,7 +8,7 @@ for key in colors.PLOTLY_SCALES.keys():
     print(key)
 """
 
-filename = 'Chapter16/data/all_month.json'
+filename = 'Chapter16/data/all_hour.json'
 
 # Explore the structure of the data
 with open(filename) as f:
