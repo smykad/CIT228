@@ -15,12 +15,12 @@ with open(filename, encoding='UTF-8') as f:
     # Earthquake data
     all_eq_data = json.load(f)
 
-
+"""
 # create the file and write the data to it
 readable_file = 'Chapter16/data/readable_eq_data.json'
 with open(readable_file, 'w') as f:
     json.dump(all_eq_data, f, indent=4)
-
+"""
 
 # After looking at the data we see that there is a key features correlating to all the dictionaries
 all_eq_dicts = all_eq_data['features']
