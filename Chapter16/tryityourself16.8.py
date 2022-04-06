@@ -8,19 +8,19 @@ for key in colors.PLOTLY_SCALES.keys():
     print(key)
 """
 
-filename = 'Chapter16/data/all_hour.json'
+filename = 'Chapter16/data/all_month.json'
 
 # Explore the structure of the data
-with open(filename) as f:
+with open(filename, encoding='UTF-8') as f:
     # Earthquake data
     all_eq_data = json.load(f)
 
-"""
+
 # create the file and write the data to it
 readable_file = 'Chapter16/data/readable_eq_data.json'
 with open(readable_file, 'w') as f:
     json.dump(all_eq_data, f, indent=4)
-"""
+
 
 # After looking at the data we see that there is a key features correlating to all the dictionaries
 all_eq_dicts = all_eq_data['features']
@@ -70,7 +70,7 @@ data = [{
     'text': hover_texts,
     # customize marker size
     'marker': {
-        'size':[5*mag for mag in mags],
+        'size':[mag*mag for mag in mags],
         'color': mags,
         'colorscale': 'plasma',
         'reversescale': True,
