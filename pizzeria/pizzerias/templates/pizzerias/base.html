@@ -1,0 +1,7 @@
+<h1>Welcome to my wonderful Pizzeria</h1>
+<p> Please make your selection.. </p>
+<p>
+    <a href="{% url 'pizzerias:index' %}">Home |</a>
+    <a href="{% url 'pizzerias:pizzas' %}">Pizza Selections</a>
+</p>
+{% block content %}{% endblock content%}
