@@ -35,9 +35,9 @@ with open(myFile) as f:
         match row[1]:
             case 'USA':
                 year = int(row[2])
-                meat = row[6]
-                sugar = row[4]
-                alcohol = row[12]
+                meat = int(row[6])
+                sugar = int(row[4])
+                alcohol = int(row[12])
                 years.append(year)
                 meats.append(meat)
                 sugars.append(sugar)
@@ -47,6 +47,7 @@ years = years[N:]
 meats = meats[N:]
 sugars = sugars[N:]
 alcohols = alcohols[N:]
+
 
 fig = go.Figure()
 fig.add_trace(go.Bar(
@@ -93,5 +94,3 @@ layout = fig.update_layout(
 fig.show()
 
 # offline.plot({'data': fig, 'layout':layout}, filename='plotly.html')
-
-
