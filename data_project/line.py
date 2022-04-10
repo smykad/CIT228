@@ -55,3 +55,4 @@ plt.suptitle('Fun with Numbers', c="orange", fontfamily=myFont, fontsize=24)
 plt.subplots_adjust(top=.8, wspace=.5)
 plt.show()
 
+# EOF

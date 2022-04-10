@@ -39,3 +39,4 @@ plt.suptitle(f"Caloric intake by category in the United States {years[0]}")
 
 plt.show()
 
+# EOF
