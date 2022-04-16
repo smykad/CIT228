@@ -1,9 +1,8 @@
-import csv 
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Information on USD to Sterling pound obtained from google search 4/16/2022
 
-png = [1,2,3]
 usd = [1]
 pound = [1.31]
 
