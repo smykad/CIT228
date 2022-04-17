@@ -28,10 +28,6 @@ sugars = sugars[N:]
 alcohols = alcohols[N:]
 years = years[N:] 
 
-men = [37.9,46.5,37.6,25.6]
-women = [35.4,43.3,37.8,22.7]
-total=[36.6,44.9,37.7,24.1]
-age_range=["Over 20","20-39","40-59","Over 60"]
 barWidth=.25
 
 #position of bar on x axis
@@ -42,13 +38,13 @@ br3 = [x + barWidth for x in br2]
 plt.xticks([r + barWidth for r in range(len(meats))],years) 
 
 # creating the bar plot 
-plt.bar(br1, meats, color ='lightgreen', width=barWidth, label="Meat") 
-plt.bar(br2, sugars, color="pink",  width=barWidth, label="Sugar")
-plt.bar(br3, alcohols, color="lightblue", width=barWidth,  label="Alcohol")
+plt.bar(br1, meats, color ='red', width=barWidth, label="Burgers") 
+plt.bar(br2, sugars, color="orange",  width=barWidth, label="Pancakes")
+plt.bar(br3, alcohols, color="brown", width=barWidth,  label="Whiskey")
   
-plt.ylabel("Kilocalories") 
+plt.ylabel("Calories") 
 plt.xlabel(f"{years[0]} - {years[-1]}") 
-plt.title("Fast Food Consumption Per Day", c="lightblue", fontsize=18) 
+plt.title("American Consumption by Category Per Day", c="black", fontsize=18) 
 plt.legend(loc="best")
 plt.show()
 

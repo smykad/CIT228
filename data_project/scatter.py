@@ -20,9 +20,9 @@ with open(myFile) as f:
                 sugars.append(sugar)
                 alcohols.append(alcohol)
                 
-plt.scatter(years, sugars, c='pink', label="Sugars")
-plt.scatter(years, meats, c='red',label="Meats")
-plt.scatter(years, alcohols, c='blue', label="Alcohols")
+plt.scatter(years, sugars, c='orange', label="Pancakes")
+plt.scatter(years, meats, c='red',label="Burgers")
+plt.scatter(years, alcohols, c='brown', label="Whiskey")
 plt.ylabel('Calories')
 plt.xlabel('Years')
 plt.suptitle('Average Daily Caloric Intake')

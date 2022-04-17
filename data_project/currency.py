@@ -15,11 +15,11 @@ br2 = [x + barWidth for x in br1]
 plt.xticks([1],['money']) 
 
 # creating the bar plot 
-plt.bar(br1, usd, color ='lightgreen', width=barWidth, label="USD") 
-plt.bar(br2, pound, color="pink",  width=barWidth, label="Pound")
+plt.bar(br1, usd, color ='orange', width=barWidth, label="USD") 
+plt.bar(br2, pound, color="brown",  width=barWidth, label="Pound")
   
 plt.ylabel("USD") 
-plt.title("USD vs British Pound", c="blue", fontsize=18) 
+plt.title("USD vs British Pound",  fontsize=18) 
 plt.legend(loc="best")
 plt.show()
 

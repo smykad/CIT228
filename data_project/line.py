@@ -32,26 +32,26 @@ myFont = 'Comic Sans MS'
 
 ax1 = plt.subplot(1,3,1)
 ax1.plot(years,meats, marker='<', ls='--', c="purple")
-plt.title("Meats", c="blue", fontfamily=myFont, fontsize=18)
-plt.ylabel("Values Cubed", c="red", fontfamily=myFont, fontsize=14)
-plt.xlabel("Year", c="yellow", fontfamily=myFont, fontsize=14)
+plt.title("Meats", c="brown", fontfamily=myFont, fontsize=18)
+plt.ylabel("Calories", c="red", fontfamily=myFont, fontsize=14)
+plt.xlabel("Years", c="black", fontfamily=myFont, fontsize=14)
 
 ax2 = plt.subplot(1,3,2) 
 ax2.plot(years,sugars, marker='o', ls=':', c="brown")
 plt.style.use('seaborn')
-plt.title("Sugars", c="blue", fontfamily=myFont, fontsize=18)
-plt.ylabel("Values Squared", c="red", fontfamily=myFont, fontsize=14)
-plt.xlabel("Input Values", c="yellow", fontfamily=myFont, fontsize=14)
+plt.title("Pancakes", c="brown", fontfamily=myFont, fontsize=18)
+plt.ylabel("Calories", c="red", fontfamily=myFont, fontsize=14)
+plt.xlabel("Years", c="black", fontfamily=myFont, fontsize=14)
 
 ax3 = plt.subplot(1,3,3) 
 ax3.plot(years,alcohols, marker='o', ls=':', c="brown")
 plt.style.use('seaborn')
-plt.title("Alcohols", c="blue", fontfamily=myFont, fontsize=18)
-plt.ylabel("Values Squared", c="red", fontfamily=myFont, fontsize=14)
-plt.xlabel("Input Values", c="yellow", fontfamily=myFont, fontsize=14)
+plt.title("Whiskey", c="brown", fontfamily=myFont, fontsize=18)
+plt.ylabel("Calories", c="red", fontfamily=myFont, fontsize=14)
+plt.xlabel("Years", c="black", fontfamily=myFont, fontsize=14)
 
 
-plt.suptitle('Fun with Numbers', c="orange", fontfamily=myFont, fontsize=24)
+plt.suptitle('The American Diet', c="orange", fontfamily=myFont, fontsize=24)
 plt.subplots_adjust(top=.8, wspace=.5)
 plt.show()
 

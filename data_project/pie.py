@@ -26,10 +26,10 @@ meats = meats[N:]
 sugars = sugars[N:]
 alcohols = alcohols[N:]             
                 
-labels = 'meats', 'sugars', 'alcohol'
+labels = 'Burgers', 'Pancakes', 'Whiskey'
 numUsed = [meats[0], sugars[0], alcohols[0]]
 explode = (.1, 0, 0)  
-wedgeColors = ('lightgreen','orange','lightblue')
+wedgeColors = ('red','orange','brown')
 
 fig1, ax1 = plt.subplots()
 
