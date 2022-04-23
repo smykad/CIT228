@@ -1,0 +1,15 @@
+{% extends 'bloggits/base.html' %}
+
+{% block content %}
+
+<p>Bloggits</p>
+
+<ul>
+    {% for bloggit in bloggits %}
+        <li>{{ bloggit }}</li>
+    {% empty %}
+        <li>No bloggits have been added yet.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
