@@ -10,5 +10,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     # Page that shows all the bloggits
     path('bloggits/', views.bloggits, name='bloggits'),
+    # Detail page for a single topic.
+    path('bloggits/<int:bloggit_id>/', views.bloggit, name='bloggit'),
 
 ]

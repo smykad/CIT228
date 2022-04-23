@@ -12,3 +12,10 @@ def bloggits(request):
     bloggits = Bloggit.objects.order_by('date_added')
     context = {'bloggits': bloggits}
     return render(request, 'bloggits/bloggits.html', context)
+
+def bloggit(request, bloggit_id):
+    """Show a single bloggit and its entries"""
+    bloggit = Bloggit.objects.get(id=bloggit_id)
+    entries = bloggit.entry_set.order_by('-date_added')
+    context = { 'bloggit': bloggit, 'entries': entries}
+    return render(request, 'bloggits/bloggit.html', context)
