@@ -30,6 +30,7 @@ def topic(request, topic_id):
 @login_required
 def new_topic(request):
     """Add a new topic."""
+    
     if request.method != 'POST':
         # No data submitted; create a blank form.
         form = TopicForm()
@@ -60,6 +61,7 @@ def new_entry(request, topic_id):
         if form.is_valid():
             new_entry = form.save(commit=False)
             new_entry.topic = topic
+            new_entry.owner = request.user
             new_entry.save()
             return redirect('bloggits:topic', topic_id=topic.id)
     

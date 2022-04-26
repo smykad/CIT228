@@ -1,7 +1,9 @@
 {% extends 'bloggits/base.html' %}
+{% load humanize %}
 
 {% block page_header %}
-    <h3>{{ topic }}</h3>
+    <h3>Welcome to the {{ topic}} Subloggit</h3>
+    <small>Posted by u/{{ topic.owner }}</small>
 {% endblock page_header %}
 
 {% block content %}
@@ -13,16 +15,30 @@
 <ul>
 {% for entry in entries %}
     <div class="card mb-3">
-        <h4 class="card-header">
-            {{ entry.date_added|date:'M d, Y H:i' }}
-            <small><a href="{% url 'bloggits:edit_entry' entry.id %}">
-                Edit entry</a></small>
+        <h5 class="card-header">
+            u/{{ entry.owner }} <small>{{ entry.date_added|naturaltime }}</small>
+            
         </h4>
         <div class="card-body">
+        
         {{ entry.text|linebreaks }}
+        
         </div>
+        <div>
+            {% if user == entry.owner %}
+        <div class='p-2'>
+        <p class="text-right">
+        <small><a href="{% url 'bloggits:edit_entry' entry.id %}">Edit entry</a></small>
+        </p>
+    </div>
+    {% else %}
+    {% endif %}
+        </div>
+        
             
     </div>
+
+    
     {% empty %}
         <p>There are no entries for this topic yet.</p>
     {% endfor %}
