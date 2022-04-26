@@ -9,13 +9,13 @@
 {% block content %}
 
 <p>
-    <a href="{% url 'bloggits:new_entry' topic.id %}">Add new entry</a>
+    <a class="text-info" href="{% url 'bloggits:new_entry' topic.id %}">Add new entry</a>
 </p>
 
 <ul>
 {% for entry in entries %}
     <div class="card mb-3">
-        <h5 class="card-header">
+        <h5 class="card-header bg-dark text-info">
             u/{{ entry.owner }} <small>{{ entry.date_added|naturaltime }}</small>
             
         </h4>
@@ -28,7 +28,7 @@
             {% if user == entry.owner %}
         <div class='p-2'>
         <p class="text-right">
-        <small><a href="{% url 'bloggits:edit_entry' entry.id %}">Edit entry</a></small>
+        <small><a class="text-info" href="{% url 'bloggits:edit_entry' entry.id %}">Edit entry</a></small>
         </p>
     </div>
     {% else %}

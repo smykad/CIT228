@@ -1,21 +1,25 @@
 {% extends "bloggits/base.html" %}
 
 {% block page_header %}
+
     <h1>Subloggits</h1>
+    <p><a class="text-info" href="{% url 'bloggits:new_topic' %}">Add a new subloggit</a></p>
+
 {% endblock page_header %}
 
-{% block content %}
 
+{% block content %}
+<div>
 <ul>
     {% for topic in topics %}
         <li><h3>
-            <a href="{% url 'bloggits:topic' topic.id %}">{{ topic }}</a>
+            <a class="text-info mb-4" href="{% url 'bloggits:topic' topic.id %}">{{ topic }}</a>
         </hs></li>
     {% empty %}
         <li><h3>No subloggits have been added yet.</h3></li>
     {% endfor %}
 </ul>
+</div>
 
-<h3><a href="{% url 'bloggits:new_topic' %}">Add a new subloggit</a></h3>
 
 {% endblock content %}

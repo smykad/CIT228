@@ -1,17 +1,17 @@
 {% extends "bloggits/base.html" %}
 
 {% block page_header %}
-    <div class="jumbotron">
-        <h1 class="display-3">Welcome to Bloggit.</h1>
+    <div class="jumbotron bg-dark">
+        <h1 class="display-3 text-info">Welcome to Bloggit.</h1>
 
-        <p class="lead">The back page of the internet. Bloggit gives you the least of the 
+        <p class="lead text-light">The back page of the internet. Bloggit gives you the least of the 
             internet in one place. Get a rarely updating blog of useless information,
              just for you.</p>
 
         {% if user.is_authenticated %}
 
         {% else %}
-            <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+            <a class="btn btn-lg btn-info" href="{% url 'users:register' %}"
             role="button">Register &raquo;</a>
 
          {% endif %}

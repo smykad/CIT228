@@ -2,14 +2,14 @@
 
 {% block content %}
 
-    <p><a href="{% url 'bloggits:topic' topic.id %}">{{ topic }}</a></p>
+    <p><a class="text-info" href="{% url 'bloggits:topic' topic.id %}">{{ topic }}</a></p>
 
     <p>Edit entry:</p>
 
     <form action="{% url 'bloggits:edit_entry' entry.id %}" method='post'>
         {% csrf_token %}
         {{ form.as_p }}
-        <button name="submit">Save changes</button>
+        <button class="btn btn-info" name="submit">Save changes</button>
     </form>
 
 {% endblock content %}
