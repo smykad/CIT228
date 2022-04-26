@@ -16,6 +16,8 @@
         {% endbuttons %}
         <input type="hidden" name="next"
             value={% url 'bloggits:index' %} />
+            <p><a href="{% url 'users:register' %}">New? Register Here.</a></p>
     </form>
+ 
     
 {% endblock content %}
